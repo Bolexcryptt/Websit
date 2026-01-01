@@ -10,27 +10,80 @@ body {
 .hero {
   background: linear-gradient(135deg, #ffffff, #cce6ff);
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 
 .hero h1 {
-  font-size: 5em; /* much bigger */
+  font-size: 8vw; /* scales with screen width */
   margin: 0;
-  color: #003366; /* deep blue */
+  color: #003366;
   animation: bounce 2s infinite;
 }
 
 .tagline {
-  font-size: 1.5em;
+  font-size: 4vw; /* responsive size */
   margin: 20px 0;
   color: #003366;
   animation: fadeIn 3s ease-in-out;
 }
 
+/* Sections */
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 6vw;
+  margin-bottom: 20px;
+  color: #003366;
+  animation: slideIn 2s ease-out;
+}
+
+.section-img, .section-video {
+  max-width: 100%; /* fits screen */
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Buttons */
+.social-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  background: #003366;
+  color: #fff;
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 4vw; /* responsive */
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: #0066cc;
+  transform: scale(1.05);
+}
+
+footer {
+  background: #cce6ff;
+  text-align: center;
+  padding: 20px;
+  font-size: 3.5vw;
+}
+
 /* Animations */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes fadeIn {
@@ -38,33 +91,27 @@ body {
   100% { opacity: 1; }
 }
 
-/* Section Titles */
-.section h2 {
-  font-size: 3em; /* bigger titles */
-  margin-bottom: 20px;
-  color: #003366;
-  animation: slideIn 2s ease-out;
-}
-
 @keyframes slideIn {
   from { transform: translateX(-100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* Buttons */
-.btn {
-  background: #003366; /* deep blue */
-  color: #fff;
-  padding: 15px 30px;
-  margin: 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2em;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.btn:hover {
-  background: #0066cc;
-  transform: scale(1.1);
+/* 📱 Mobile tweaks */
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 10px;
+  }
+  .hero h1 {
+    font-size: 12vw; /* even bigger on small screens */
+  }
+  .tagline {
+    font-size: 5vw;
+  }
+  .section h2 {
+    font-size: 8vw;
+  }
+  .btn {
+    width: 80%; /* buttons fit nicely */
+    font-size: 5vw;
+  }
 }
